@@ -1,0 +1,14 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-InfinarioSDK-8980.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Program Files\Epic Games\UE_4.19\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\SharedPCH.Engine.h.obj"
+"D:\Work\Unreal Projects\InfinarioPlugin\Plugins\InfinarioSDK\Intermediate\Build\Win64\UE4Editor\Development\InfinarioSDK\Module.InfinarioSDK.cpp.obj"
+"D:\Work\Unreal Projects\InfinarioPlugin\Plugins\InfinarioSDK\Intermediate\Build\Win64\UE4Editor\Development\InfinarioSDK\Module.InfinarioSDK.gen.cpp.obj"
+"C:\Program Files\Epic Games\UE_4.19\Engine\Intermediate\Build\Win64\UE4Editor\Development\InfinarioSDK\PCLaunch.rc.res"
+"C:\Program Files\Epic Games\UE_4.19\Engine\Intermediate\Build\Win64\UE4Editor\Development\ModuleVersionResource.rc.inl.res"
+/OUT:"D:\Work\Unreal Projects\InfinarioPlugin\Plugins\InfinarioSDK\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-InfinarioSDK-8980.lib"
