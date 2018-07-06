@@ -38,9 +38,9 @@ protected:
 
 public:
 	/** Initialize  */
-	void Initialize( const FString& ProjectTokenToSet, const FString& AppVersionToSet = TEXT( "" ), const FString& TargetToSet = TEXT( "" ) );
+	void Initialize( const FString& ProjectTokenToSet, const FString& TargetToSet = TEXT( "" ), const FString& AppVersionToSet = TEXT( "" ) );
 
-	/** Set player identity */
+	/** Set player identity. Also saves the uuid to disk. */
 	void Identify( const FString& PlayerIdentityToSet );
 
 	/** Main tracking event */
@@ -112,7 +112,7 @@ private:
 	/** Stores App version. Set by Initialize function. */
 	FString AppVersion;
 
-	/** Stores Target. Set by Initialize function. */
+	/** Stores Target. Default is set to api.infinario.com/bulk. Set by Initialize function. */
 	FString Target;
 
 	/** Is true in case plugin is correctly initialized by user.  */
@@ -148,13 +148,16 @@ private:
 	/** Returns map of HW specifications for the active platform */
 	TMap< FString, FInfinarioData > GetHWPayload( );
 
+	/** Generate new UUID */
+	FString GenerateUUID( );
+
 	//===------------------------------------------------------------------===//
 	// BP library
 	//===------------------------------------------------------------------===//
 
 public:
 	UFUNCTION( BlueprintCallable, Category = "Infinario" )
-	void BP_Initialize( const FString& ProjectTokenToSet, const FString& AppVersionToSet, const FString& TargetToSet );
+	void BP_Initialize( const FString& ProjectTokenToSet, const FString& TargetToSet, const FString& AppVersionToSet );
 
 	UFUNCTION( BlueprintCallable, Category = "Infinario" )
 	void BP_Track( const FString ActionName, const TMap< FString, FInfinarioData >& Payload, const float TimeStamp = -1.0f );

@@ -17,11 +17,11 @@ void AMyGameModeBase::BeginPlay( )
 			return;
 		}
 
-		/** Initialize with a given token */
-		Inf->Initialize( Token );
+		/** Initialize with a given token amd custom target API */
+		Inf->Initialize( Token, TEXT( "api.infinario.com" ) );
 
 		/** Initialize with a given token */
-		Inf->Identify( FString( TEXT( "C++ Player" ) ) );
+		//Inf->Identify( FString( TEXT( "C++ Player" ) ) );
 
 		/** Create data attached to every call. This part is optional.*/
 		TMap< FString, FInfinarioData > EveryCallData;
@@ -34,7 +34,7 @@ void AMyGameModeBase::BeginPlay( )
 		TestData.Add( "String Key", FInfinarioData( FString( TEXT( "Alex - String" ) ) ) );
 		TestData.Add( "Float Key", FInfinarioData( 1.2f ) );
 		TestData.Add( "Bool Key", FInfinarioData( true ) );
-	
+
 		Inf->Track( "my_event", TestData );
 		Inf->TrackSessionStart( TestData );
 		Inf->TrackSessionEnd( TestData );
